@@ -5,7 +5,6 @@
 
 <?php
 $str = 'a1b2c3';
-
 // Заменяем каждую цифру на саму себя дважды
 $result = preg_replace_callback('/\d/', function($matches) {
     return $matches[0] . $matches[0];

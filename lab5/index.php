@@ -1,7 +1,7 @@
 <?php require('header.php');?>
 <?php 
   $mysqli = mysqli_connect('localhost', 'root', '', 'notebook');
-  if(!mysqli_connect_errno()) echo mysqli_connect_error();
+  if(mysqli_connect_errno()) echo mysqli_connect_error();
 
   //insert
   if(!empty($_POST) && empty($_GET['id'])){
@@ -45,10 +45,6 @@
   if ($_GET['elem'] == 'menu' || $_GET['elem'] == 'add' || $_GET['elem'] == 'delete') require( $_GET['elem'].'.php');
 
   mysqli_close($mysqli);
-  // if(isset($_GET['elem']) && $_GET['elem'] == 'add')
-  //   require('add.php');
-  // if(isset($_GET['elem']) && $_GET['elem'] == 'delete')
-  //   require('delete.php');
 ?>
 
 <?php require('footer.php');?>

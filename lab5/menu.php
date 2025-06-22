@@ -9,7 +9,7 @@
     $sort = $_GET['sort'] ?? 'id';
     $order = $_GET['order'] ?? 'ASC';
 
-    $allowed_sorts = ['id', 'lastname', 'date'];
+    $allowed_sorts = ['id', 'firstname', 'date'];
     if(!in_array($sort, $allowed_sorts)) {
         $sort = 'id';
     }
@@ -41,9 +41,9 @@
         ID <?= $sort == 'id' ? ($order == 'ASC' ? '↑' : '↓') : '' ?>
     </a>
     
-    <a href="index.php?elem=menu&sort=lastname&order=<?= $sort == 'lastname' ? ($order == 'ASC' ? 'DESC' : 'ASC') : 'ASC' ?>" 
-       class="btn btn-sm btn-<?= $sort == 'lastname' ? 'primary' : 'outline-primary' ?> me-2">
-        Фамилии <?= $sort == 'lastname' ? ($order == 'ASC' ? '↑' : '↓') : '' ?>
+    <a href="index.php?elem=menu&sort=firstname&order=<?= $sort == 'firstname' ? ($order == 'ASC' ? 'DESC' : 'ASC') : 'ASC' ?>" 
+       class="btn btn-sm btn-<?= $sort == 'firstname' ? 'primary' : 'outline-primary' ?> me-2">
+        Фамилии <?= $sort == 'firstname' ? ($order == 'ASC' ? '↑' : '↓') : '' ?>
     </a>
     
     <a href="index.php?elem=menu&sort=date&order=<?= $sort == 'date' ? ($order == 'ASC' ? 'DESC' : 'ASC') : 'ASC' ?>" 
@@ -56,8 +56,8 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Имя</th>
       <th scope="col">Фамилия</th>
+      <th scope="col">Имя</th>
       <th scope="col">Отчество</th>
       <th scope="col">Дата рождения</th>
       <th scope="col">Email</th>
